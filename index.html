@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+<h2>House Price Prediction Webapp</h2>
+<link rel="stylesheet" href="static/index.css">
+{% endblock head %}
+
+{% block body %}
+<form action='#' method="post">
+    <label for="sqft">Square Feet :</label>
+    <input type="number" id="sqft" name="sqft" placeholder="Enter the SquareFeet for Room" required>
+
+    <br>
+
+    <label for="bedroom">Bedroom :</label>
+    <input type="number" id="bedroom" name="bedroom" placeholder="Enter the number of bedrooms required" required>
+
+    <br>
+
+    <label for="bathroom">Bathroom :</label>
+    <input type="number" id="bathroom" name="bathroom" placeholder="Enter the number of bathrooms required" required>
+
+    <br><br>
+    <input type="submit" value="Predict the price">
+</form>
+
+    <p class="sqft-info">For {{ sqft }} sqft, {{ bedroom }} bedrooms, and {{ bathroom }} bathrooms</p>
+    <br>
+    <p class="price-info">Price: {{ model }} Rs</p>
+{% endblock body %}
+
+
